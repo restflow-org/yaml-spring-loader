@@ -1,0 +1,10 @@
+
+types:
+    
+  - id: Address
+    className: ssrl.beans.Address
+    singleton: false
+    
+  - id: Person
+    className: ssrl.beans.Person
+    singleton: false

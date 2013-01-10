@@ -1,0 +1,83 @@
+imports:
+  - classpath:/baseComponents.yml
+
+components:
+
+  - id: Ssrl
+    className: ssrl.beans.Publisher 
+    properties:
+      name: SSRL
+      address: !bean
+        className: ssrl.beans.Address
+        properties:
+          street: 2575 Sand Hill
+          city: Menlo Park
+          zip: 94025  
+
+  - id: Zelazny
+    type: Person
+    singleton: false
+    properties:
+      first: Roger
+      last: Zelazny
+      address: !bean
+        type: Address
+        properties:
+          street: 2575 Sand Hill
+          city: Menlo Park
+          zip: 94025
+      Publisher: !bean
+        className: ssrl.beans.Publisher
+        properties:
+          name: SSRL
+          address: !inline
+            type: Address
+            properties:
+              street: 2575 Sand Hill
+              city: Menlo Park
+              zip: 94025
+
+  - id: Brust
+    type: Person
+    properties:
+      first: Steven
+      last: Brust
+      address: !bean
+        type: Address
+        properties:
+          street: 2575 Sand Hill
+          city: Menlo Park
+          zip: 94025
+      publisher: !ref Ssrl
+ 
+ #don't define address fully to test null properties...
+  - id: Farmer
+    type: Person
+    properties:
+      first: Jose
+      last: Farmer
+      address: !bean
+        className: ssrl.beans.Address
+      
+ 
+  - id: Authors
+    className: ssrl.beans.People
+    singleton: false
+    properties:
+      people:
+        - !ref Zelazny
+        - !bean
+            type: Person
+            properties:
+              first: Isaac
+              last: Asimov
+              address: !bean
+                type: Address
+                properties:
+                  street: 123
+                  city: New York
+                  zip: 90004
+        - !ref Brust
+        - !ref Farmer
+
+                  

@@ -1,0 +1,13 @@
+badKey: hello
+
+imports:
+  classpath:/baseComponents.yml
+
+components:
+
+  - id: Zelazny
+    type: Person
+    singleton: false
+    properties:
+     first: Roger
+     last: Zelazny

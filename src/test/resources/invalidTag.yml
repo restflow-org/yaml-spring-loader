@@ -1,0 +1,23 @@
+imports:
+  - classpath:/baseComponents.yml
+
+components:
+
+  - id: Ssrl
+    className: ssrl.beans.Publisher 
+    properties:
+      name: SSRL
+      address: !bean
+        className: ssrl.beans.Address
+        properties:
+          street: 2575 Sand Hill
+          city: Menlo Park
+          zip: 94025  
+
+  - id: Zelazny
+    type: Person
+    singleton: false
+    properties:
+      first: Roger
+      last: Zelazny
+      address: !local

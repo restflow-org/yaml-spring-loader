@@ -1,0 +1,15 @@
+
+namespace:
+
+imports:
+  - classpath:/baseComponents.yml
+
+components:
+
+  - id: SsrlAddress
+    type: Address
+    properties:
+      street: 2575 Sand Hill
+      city: Menlo Park
+      zip: 94025
+ 
