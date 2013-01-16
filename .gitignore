@@ -1,5 +1,5 @@
 .svn
 *.class
 *.jar
-*.war
-*.ear
+target/
+.settings/
