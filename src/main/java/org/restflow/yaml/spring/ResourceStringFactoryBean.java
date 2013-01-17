@@ -1,4 +1,4 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.BeansException;

@@ -3,6 +3,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.restflow.yaml.spring.YamlBeanDefinitionReader;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.support.GenericApplicationContext;
 import org.yaml.snakeyaml.parser.ParserException;
@@ -12,7 +13,6 @@ import org.yaml.snakeyaml.scanner.ScannerException;
 import ssrl.beans.Address;
 import ssrl.beans.People;
 import ssrl.beans.Person;
-import ssrl.yaml.spring.YamlBeanDefinitionReader;
 import junit.framework.TestCase;
 
 
@@ -130,7 +130,7 @@ public class TestLoader extends TestCase {
 			assertEquals(
 					e.getMessage(),
 					""
-							+ " Unable to find property 'a' on class: ssrl.yaml.spring.SpringBean in yaml resource: invalidComponentProperty.yml\n"
+							+ " Unable to find property 'a' on class: org.restflow.yaml.spring.SpringBean in yaml resource: invalidComponentProperty.yml\n"
 							+ "Error found while traversing yaml structure:\n"
 							+ "  components:\n    a:\n"
 							+ " Property should be one of properties,parent,id,scope,singleton,namespace,abztract,type,className,lazy,constructor");
@@ -166,12 +166,12 @@ public class TestLoader extends TestCase {
 		} catch (BeanCreationException e) {
 			assertEquals(
 					e.getMessage(),
-					" Unable to find property 'badKey' on class: ssrl.yaml.spring.YamlBeans in yaml resource: badTopLevelKey.yml\n"
+					" Unable to find property 'badKey' on class: org.restflow.yaml.spring.YamlBeans in yaml resource: badTopLevelKey.yml\n"
 							+ "Error found while traversing yaml structure:\n"
 							+ "  badKey:\n"
 							+ " Property should be one of namespace,beans,components,imports,types");
 
-			// assertTrue(e.getMessage().startsWith("Component is defined with invalid token.\n Unable to find property 'badKey' on class: ssrl.yaml.spring.YamlBeans"));
+			// assertTrue(e.getMessage().startsWith("Component is defined with invalid token.\n Unable to find property 'badKey' on class: org.restflow.yaml.spring.YamlBeans"));
 		}
 
 	}

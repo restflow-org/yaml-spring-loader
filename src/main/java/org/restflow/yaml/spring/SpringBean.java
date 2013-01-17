@@ -1,13 +1,13 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import org.restflow.yaml.spring.ConstructorArg;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
-import ssrl.yaml.spring.ConstructorArg;
 
 public class SpringBean {
 

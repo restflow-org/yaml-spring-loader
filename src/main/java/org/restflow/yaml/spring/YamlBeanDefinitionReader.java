@@ -1,4 +1,4 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -52,7 +52,7 @@ public class YamlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 		
 		importedFiles = new Vector<String>();
 		
-		_constructor = new CustomConstructor("ssrl.yaml.spring.YamlBeans");		
+		_constructor = new CustomConstructor("org.restflow.yaml.spring.YamlBeans");		
 		addBasicConstructorTypes();		
 	}
 

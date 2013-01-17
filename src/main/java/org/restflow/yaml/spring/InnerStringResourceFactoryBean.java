@@ -1,6 +1,5 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -10,10 +9,17 @@ import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
-
-import ssrl.yaml.spring.ConstructorArg;
-
-public class InnerSpringBean implements BeanDefinition {
+import org.springframework.beans.factory.support.ManagedMap;
+/**
+ * Inner bean wrapping the ResourceStringFactoryBean, (which loads a resource and returns a String).
+ * This class is meant to be used with Yamls tag capabilities (i.e. !resource) allowing resources to
+ * be loaded and injected directly into the String properties of a bean.  The BeanClassName is a hardcoded
+ * with the name of the factory for doing the loading and conversion to String.
+ * 
+ * @author scottm
+ *
+ */
+public class InnerStringResourceFactoryBean implements BeanDefinition {
 
 	public String id;
 	public String className;
@@ -28,8 +34,14 @@ public class InnerSpringBean implements BeanDefinition {
 	private List<ConstructorArg> constructor = new Vector<ConstructorArg>();
 	private ConstructorArgumentValues constructorArgumentValues = new ConstructorArgumentValues();
 	
+	public InnerStringResourceFactoryBean (String resourceName) {
+		properties = new ManagedMap<String, Object>();
+		properties.put("resourcePath", resourceName);
+	}
+	
 	public String getClassName() {
-		return className;
+		//anonymous inner bean. named unused
+		return "ResourceStringFactoryBean";
 	}
 	public void setClassName(String className) {
 		this.className = className;
@@ -101,7 +113,7 @@ public class InnerSpringBean implements BeanDefinition {
 	
 	@Override
 	public String getBeanClassName() {
-		return className;
+		return "org.restflow.yaml.spring.ResourceStringFactoryBean";
 	}
 	@Override
 	public String getParentName() {

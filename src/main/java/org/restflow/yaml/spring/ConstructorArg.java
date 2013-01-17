@@ -1,4 +1,4 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 
 public class ConstructorArg {
 
