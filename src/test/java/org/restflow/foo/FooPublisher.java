@@ -1,10 +1,10 @@
-package ssrl.beans;
+package org.restflow.foo;
 
-public class Publisher {
+public class FooPublisher {
 
 	private String name;
 	
-	private Address address;
+	private FooAddress address;
 
 	public String getName() {
 		return name;
@@ -14,11 +14,11 @@ public class Publisher {
 		this.name = name;
 	}
 
-	public Address getAddress() {
+	public FooAddress getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(FooAddress address) {
 		this.address = address;
 	}
 

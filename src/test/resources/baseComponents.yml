@@ -2,9 +2,9 @@
 types:
     
   - id: Address
-    className: ssrl.beans.Address
+    className: org.restflow.foo.FooAddress
     singleton: false
     
   - id: Person
-    className: ssrl.beans.Person
+    className: org.restflow.foo.FooAuthor
     singleton: false

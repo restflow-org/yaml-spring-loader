@@ -1,8 +1,11 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.restflow.foo.FooAddress;
+import org.restflow.foo.FooAuthors;
+import org.restflow.foo.FooAuthor;
 import org.restflow.yaml.spring.YamlBeanDefinitionReader;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.support.GenericApplicationContext;
@@ -10,9 +13,6 @@ import org.yaml.snakeyaml.parser.ParserException;
 import org.yaml.snakeyaml.scanner.ScannerException;
 
 
-import ssrl.beans.Address;
-import ssrl.beans.People;
-import ssrl.beans.Person;
 import junit.framework.TestCase;
 
 
@@ -33,7 +33,7 @@ public class TestLoader extends TestCase {
 
 		factory.refresh();
 		
-		Address address = (Address)factory.getBean("SsrlAddress");
+		FooAddress address = (FooAddress)factory.getBean("SsrlAddress");
 		assertEquals("2575 Sand Hill", address.getStreet());
 		
 	}
@@ -45,7 +45,7 @@ public class TestLoader extends TestCase {
 
 		factory.refresh();
 		
-		Person person = (Person)factory.getBean("Zelazny");
+		FooAuthor person = (FooAuthor)factory.getBean("Zelazny");
 		assertEquals("Roger", person.getFirst());
 		assertEquals("2575 Sand Hill", person.getAddress().getStreet());
 		
@@ -58,7 +58,7 @@ public class TestLoader extends TestCase {
 
 		factory.refresh();
 		
-		People people = (People)factory.getBean("Authors");
+		FooAuthors people = (FooAuthors)factory.getBean("Authors");
 		assertNotNull( people.getPeople().get(0));
 		
 	}	
@@ -202,7 +202,7 @@ public class TestLoader extends TestCase {
 		String text = "components:\n"
 				+ "\n"
 				+ "  - id: SsrlAddress\n"
-				+ "    className: ssrl.beans.Address\n"
+				+ "    className: org.restflow.foo.FooAddress\n"
 				+ "    properties:\n"
 				+ "      street: !resource file:src/test/resources/street.txt\n"
 				+ "      city: Menlo Park\n"
@@ -212,7 +212,7 @@ public class TestLoader extends TestCase {
 		rdr.loadBeanDefinitions(beans,"junit Test");
 		factory.refresh();
 		
-		Address address = (Address)factory.getBean("SsrlAddress");
+		FooAddress address = (FooAddress)factory.getBean("SsrlAddress");
 		assertEquals("2575 Sand Hill Road", address.getStreet());
 	}
 	

@@ -1,16 +1,16 @@
-package ssrl.beans;
+package org.restflow.foo;
 
 import java.util.List;
 
-public class People {
+public class FooAuthors {
 
-	private List<Person> people;
+	private List<FooAuthor> people;
 
-	public List<Person> getPeople() {
+	public List<FooAuthor> getPeople() {
 		return people;
 	}
 
-	public void setPeople(List<Person> people) {
+	public void setPeople(List<FooAuthor> people) {
 		this.people = people;
 	}
 	

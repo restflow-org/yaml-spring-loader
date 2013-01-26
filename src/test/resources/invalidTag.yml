@@ -4,11 +4,11 @@ imports:
 components:
 
   - id: Ssrl
-    className: ssrl.beans.Publisher 
+    className: org.restflow.foo.FooPublisher 
     properties:
       name: SSRL
       address: !bean
-        className: ssrl.beans.Address
+        className: org.restflow.foo.FooAddress
         properties:
           street: 2575 Sand Hill
           city: Menlo Park

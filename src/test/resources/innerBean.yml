@@ -4,11 +4,11 @@ imports:
 components:
 
   - id: Ssrl
-    className: ssrl.beans.Publisher 
+    className: org.restflow.foo.FooPublisher 
     properties:
       name: SSRL
       address: !bean
-        className: ssrl.beans.Address
+        className: org.restflow.foo.FooAddress
         properties:
           street: 2575 Sand Hill
           city: Menlo Park
@@ -27,7 +27,7 @@ components:
           city: Menlo Park
           zip: 94025
       Publisher: !bean
-        className: ssrl.beans.Publisher
+        className: org.restflow.foo.FooPublisher
         properties:
           name: SSRL
           address: !inline
@@ -57,11 +57,11 @@ components:
       first: Jose
       last: Farmer
       address: !bean
-        className: ssrl.beans.Address
+        className: org.restflow.foo.FooAddress
       
  
   - id: Authors
-    className: ssrl.beans.People
+    className: org.restflow.foo.FooAuthors
     singleton: false
     properties:
       people:

@@ -1,6 +1,6 @@
-package ssrl.beans;
+package org.restflow.foo;
 
-public class Address {
+public class FooAddress {
 
 	private String street,city,zip;
 

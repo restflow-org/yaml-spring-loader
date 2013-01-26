@@ -1,4 +1,4 @@
-package ssrl.yaml.spring;
+package org.restflow.yaml.spring;
 import org.restflow.yaml.spring.Namespace;
 
 import junit.framework.TestCase;
