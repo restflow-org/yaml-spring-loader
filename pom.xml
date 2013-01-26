@@ -11,7 +11,14 @@
   <groupId>org.restflow</groupId>
   <artifactId>YamlSpringLoader</artifactId>
   <packaging>jar</packaging>
-  <version>2.7.1</version>
+  <version>3.1</version>
+    <repositories>
+        <repository>
+        <id>org.restflow</id>
+        <name>SSRL repository</name>
+        <url>http://smb.slac.stanford.edu/maven/release</url>
+        </repository>
+    </repositories>  
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -91,6 +98,14 @@
 	    <groupId>junit</groupId>
 	    <artifactId>junit</artifactId>
 	    <version>3.8.2</version>
-    </dependency>        
+    </dependency>
+
   </dependencies>
+<licenses>
+  <license>
+    <name>MIT Style License</name>
+    <url>http://www.restflow.org/license/LICENSE.txt</url>
+  </license>
+</licenses>      
+  
 </project>
